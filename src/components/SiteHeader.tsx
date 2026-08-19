@@ -26,62 +26,59 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 lg:px-8">
-        <Link to="/" className="group flex items-center gap-3">
+        <Link to="/" className="group flex shrink-0 items-center gap-3">
           <span className="relative grid size-11 place-items-center rounded-xl surface-hero shadow-soft">
             <GraduationCap className="size-5 text-primary-foreground" />
             <span className="pointer-events-none absolute inset-0 rounded-xl border border-gold/60 transition-transform duration-500 group-hover:scale-110" />
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-base font-semibold text-navy-deep">
-              {SITE.short} <span className="text-gold-gradient">Riset &amp; Inovasi</span>
+            <span className="block whitespace-nowrap font-display text-base font-semibold text-navy-deep">
+              {SITE.short} <span className="text-gold-gradient">Riset</span>
             </span>
-            <span className="block text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-              {SITE.org}
+            <span className="block text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+              Riset &amp; Inovasi Unimus
             </span>
           </span>
         </Link>
 
-        <nav className="ml-auto hidden items-center gap-1 xl:flex">
+        <nav className="ml-auto hidden items-center xl:flex">
           <Link
             to="/"
-            className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+            className="rounded-md px-2.5 py-2 text-[13px] font-medium text-foreground/80 transition-colors hover:text-primary"
           >
             Beranda
           </Link>
-          {sections.map((s) => (
-            <div key={s.slug} className="group relative">
-              <Link
-                to={"/" + s.slug}
-                className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
-                activeProps={{ className: "text-primary" }}
-              >
-                {s.label}
-                <ChevronDown className="size-3.5 transition-transform duration-300 group-hover:rotate-180" />
-              </Link>
-              <div className="invisible absolute left-0 top-full w-72 translate-y-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="mt-1 overflow-hidden rounded-xl border border-border bg-popover p-2 shadow-lift">
-                  <span className="block h-0.5 w-full bg-gradient-to-r from-gold/80 to-transparent" />
-                  {s.subs.map((sub) => (
-                    <Link
-                      key={sub.title}
-                      to={"/" + s.slug}
-                      hash={slugify(sub.title)}
-                      className="block rounded-lg px-3 py-2 text-sm text-popover-foreground/85 transition-colors hover:bg-secondary hover:text-primary"
-                    >
-                      {sub.title}
-                    </Link>
-                  ))}
-                </div>
+          {primary.map((s) => (
+            <MenuItem key={s.slug} section={s} />
+          ))}
+          <div className="group relative">
+            <span className="flex cursor-default items-center gap-1 rounded-md px-2.5 py-2 text-[13px] font-medium text-foreground/80 transition-colors group-hover:text-primary">
+              Lainnya
+              <ChevronDown className="size-3.5 transition-transform duration-300 group-hover:rotate-180" />
+            </span>
+            <div className="invisible absolute right-0 top-full w-64 translate-y-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="mt-1 overflow-hidden rounded-xl border border-border bg-popover p-2 shadow-lift">
+                <span className="block h-0.5 w-full bg-gradient-to-r from-gold/80 to-transparent" />
+                {rest.map((s) => (
+                  <Link
+                    key={s.slug}
+                    to={"/" + s.slug}
+                    className="block rounded-lg px-3 py-2 text-sm text-popover-foreground/85 transition-colors hover:bg-secondary hover:text-primary"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
           <Link
             to="/kontak"
-            className="ml-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift"
+            className="ml-2 rounded-full bg-primary px-4 py-2 text-[13px] font-semibold text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift"
           >
             Kontak
           </Link>
         </nav>
+
 
         <button
           onClick={() => setOpen((v) => !v)}
