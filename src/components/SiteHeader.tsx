@@ -80,29 +80,9 @@ export function SiteHeader() {
           >
             Beranda
           </Link>
-          {primary.map((s) => (
+          {sections.map((s) => (
             <MenuItem key={s.slug} section={s} />
           ))}
-          <div className="group relative">
-            <span className="flex cursor-default items-center gap-1 rounded-md px-2.5 py-2 text-[13px] font-medium text-foreground/80 transition-colors group-hover:text-primary">
-              Lainnya
-              <ChevronDown className="size-3.5 transition-transform duration-300 group-hover:rotate-180" />
-            </span>
-            <div className="invisible absolute right-0 top-full w-64 translate-y-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              <div className="mt-1 overflow-hidden rounded-xl border border-border bg-popover p-2 shadow-lift">
-                <span className="block h-0.5 w-full bg-gradient-to-r from-gold/80 to-transparent" />
-                {rest.map((s) => (
-                  <Link
-                    key={s.slug}
-                    to={"/" + s.slug}
-                    className="block rounded-lg px-3 py-2 text-sm text-popover-foreground/85 transition-colors hover:bg-secondary hover:text-primary"
-                  >
-                    {s.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
           <Link
             to="/kontak"
             className="ml-2 rounded-full bg-primary px-4 py-2 text-[13px] font-semibold text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift"
