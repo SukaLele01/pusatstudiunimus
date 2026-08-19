@@ -17,6 +17,7 @@ import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as KolaborasiRouteImport } from './routes/kolaborasi'
 import { Route as KontakRouteImport } from './routes/kontak'
 import { Route as LayananRouteImport } from './routes/layanan'
+import { Route as LayananKerjasamaRouteImport } from './routes/layanan-kerjasama'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PengabdianRouteImport } from './routes/pengabdian'
 import { Route as ProfilRouteImport } from './routes/profil'
@@ -65,6 +66,11 @@ const LayananRoute = LayananRouteImport.update({
   path: '/layanan',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LayananKerjasamaRoute = LayananKerjasamaRouteImport.update({
+  id: '/layanan-kerjasama',
+  path: '/layanan-kerjasama',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OpportunitiesRoute = OpportunitiesRouteImport.update({
   id: '/opportunities',
   path: '/opportunities',
@@ -110,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/kolaborasi': typeof KolaborasiRoute
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
+  '/layanan-kerjasama': typeof LayananKerjasamaRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
@@ -127,6 +134,7 @@ export interface FileRoutesByTo {
   '/kolaborasi': typeof KolaborasiRoute
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
+  '/layanan-kerjasama': typeof LayananKerjasamaRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
@@ -145,6 +153,7 @@ export interface FileRoutesById {
   '/kolaborasi': typeof KolaborasiRoute
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
+  '/layanan-kerjasama': typeof LayananKerjasamaRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
@@ -164,6 +173,7 @@ export interface FileRouteTypes {
     | '/kolaborasi'
     | '/kontak'
     | '/layanan'
+    | '/layanan-kerjasama'
     | '/opportunities'
     | '/pengabdian'
     | '/profil'
@@ -181,6 +191,7 @@ export interface FileRouteTypes {
     | '/kolaborasi'
     | '/kontak'
     | '/layanan'
+    | '/layanan-kerjasama'
     | '/opportunities'
     | '/pengabdian'
     | '/profil'
@@ -198,6 +209,7 @@ export interface FileRouteTypes {
     | '/kolaborasi'
     | '/kontak'
     | '/layanan'
+    | '/layanan-kerjasama'
     | '/opportunities'
     | '/pengabdian'
     | '/profil'
@@ -216,6 +228,7 @@ export interface RootRouteChildren {
   KolaborasiRoute: typeof KolaborasiRoute
   KontakRoute: typeof KontakRoute
   LayananRoute: typeof LayananRoute
+  LayananKerjasamaRoute: typeof LayananKerjasamaRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
   PengabdianRoute: typeof PengabdianRoute
   ProfilRoute: typeof ProfilRoute
@@ -283,6 +296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayananRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/layanan-kerjasama': {
+      id: '/layanan-kerjasama'
+      path: '/layanan-kerjasama'
+      fullPath: '/layanan-kerjasama'
+      preLoaderRoute: typeof LayananKerjasamaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/opportunities': {
       id: '/opportunities'
       path: '/opportunities'
@@ -344,6 +364,7 @@ const rootRouteChildren: RootRouteChildren = {
   KolaborasiRoute: KolaborasiRoute,
   KontakRoute: KontakRoute,
   LayananRoute: LayananRoute,
+  LayananKerjasamaRoute: LayananKerjasamaRoute,
   OpportunitiesRoute: OpportunitiesRoute,
   PengabdianRoute: PengabdianRoute,
   ProfilRoute: ProfilRoute,
