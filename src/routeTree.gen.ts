@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as KontakRouteImport } from './routes/kontak'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KontakRoute = KontakRouteImport.update({
+  id: '/kontak',
+  path: '/kontak',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/kontak': typeof KontakRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kontak': typeof KontakRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/kontak': typeof KontakRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/kontak'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/kontak'
+  id: '__root__' | '/' | '/kontak'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KontakRoute: typeof KontakRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kontak': {
+      id: '/kontak'
+      path: '/kontak'
+      fullPath: '/kontak'
+      preLoaderRoute: typeof KontakRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KontakRoute: KontakRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
