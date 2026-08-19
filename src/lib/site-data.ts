@@ -24,59 +24,29 @@ export const sections: Section[] = [
     slug: "profil",
     label: "Profil",
     title: "Profil Pusat Studi",
-    tagline: "Identitas, arah, dan sumber daya kelembagaan",
+    tagline: "Siapa kami dan apa yang kami kerjakan",
     intro:
-      "Pusat Studi hadir sebagai simpul akademik yang menghubungkan riset multidisiplin dengan kebutuhan nyata masyarakat, industri, dan pemerintah.",
+      "Pusat Studi adalah lembaga riset universitas yang menghubungkan hasil penelitian dengan kebutuhan masyarakat, dunia usaha, dan pemerintah.",
     subs: [
       {
-        title: "Tentang Pusat Studi",
-        desc: "Lembaga riset internal universitas yang mengelola kajian strategis, inovasi terapan, dan diseminasi pengetahuan lintas fakultas.",
+        title: "Tentang Kami",
+        desc: "Kami mengelola penelitian, inovasi, dan program bersama masyarakat di lingkungan universitas.",
       },
       {
-        title: "Sejarah & Latar Belakang",
-        desc: "Berdiri dari kebutuhan akan riset yang terintegrasi, tumbuh melalui kolaborasi antarprogram studi dan kemitraan eksternal.",
-      },
-      {
-        title: "Visi, Misi & Tujuan",
-        desc: "Menjadi rujukan kajian berbasis bukti di tingkat nasional melalui riset bermutu, publikasi terindeks, dan hilirisasi berdampak.",
+        title: "Visi & Misi",
+        desc: "Menjadi rujukan riset yang bermutu dan bermanfaat langsung bagi masyarakat luas.",
       },
       {
         title: "Struktur Organisasi",
-        desc: "Kepala Pusat, sekretaris, koordinator klaster riset, unit publikasi, unit kemitraan, dan tim administrasi.",
+        desc: "Dipimpin seorang Kepala Pusat, dibantu sekretaris, koordinator bidang, dan tim administrasi.",
       },
       {
-        title: "Tim / Researchers",
-        desc: "Peneliti tetap, peneliti afiliasi, asisten riset mahasiswa, serta mitra pakar dari lembaga dan universitas lain.",
+        title: "Tim Peneliti",
+        desc: "Puluhan dosen dari berbagai bidang ilmu, dibantu mahasiswa dan mitra pakar dari luar kampus.",
       },
       {
         title: "Fasilitas",
-        desc: "Ruang kolaborasi, laboratorium data, studio produksi konten ilmiah, perpustakaan digital, dan ruang diskusi kebijakan.",
-      },
-    ],
-  },
-  {
-    slug: "fokus-kajian",
-    label: "Fokus Kajian",
-    title: "Fokus Kajian",
-    tagline: "Peta tematik yang memandu seluruh aktivitas riset",
-    intro:
-      "Setiap agenda riset disusun dalam klaster tematik agar kolaborasi lebih terarah dan capaian dapat diukur dari tahun ke tahun.",
-    subs: [
-      {
-        title: "Bidang Kajian",
-        desc: "Kesehatan masyarakat, pendidikan, ekonomi kerakyatan, teknologi terapan, lingkungan, serta sosial-humaniora.",
-      },
-      {
-        title: "Research Cluster",
-        desc: "Klaster peneliti lintas disiplin dengan koordinator, agenda tahunan, dan target luaran yang spesifik.",
-      },
-      {
-        title: "Topik Unggulan",
-        desc: "Isu prioritas yang dikawal jangka panjang: transformasi digital layanan publik, gizi dan stunting, energi bersih, kota tangguh.",
-      },
-      {
-        title: "Research Roadmap",
-        desc: "Tahapan lima tahun dari eksplorasi, pengembangan, uji lapangan, hingga adopsi kebijakan dan komersialisasi.",
+        desc: "Ruang kerja bersama, laboratorium data, perpustakaan digital, dan ruang diskusi publik.",
       },
     ],
   },
@@ -84,137 +54,108 @@ export const sections: Section[] = [
     slug: "riset-inovasi",
     label: "Riset & Inovasi",
     title: "Riset & Inovasi",
-    tagline: "Dari pertanyaan penelitian hingga produk yang dipakai",
+    tagline: "Penelitian yang berujung pada solusi nyata",
     intro:
-      "Portofolio riset dikelola sebagai siklus utuh: perencanaan, pelaksanaan, perlindungan kekayaan intelektual, dan hilirisasi.",
+      "Penelitian kami dimulai dari masalah nyata di lapangan, lalu dikembangkan menjadi alat, sistem, atau cara kerja baru yang bisa dipakai.",
     subs: [
       {
-        title: "Penelitian",
-        desc: "Skema penelitian internal, hibah nasional, dan penelitian kerja sama dengan pemangku kepentingan.",
+        title: "Bidang Kajian",
+        desc: "Kesehatan, pendidikan, ekonomi masyarakat, teknologi terapan, lingkungan, serta sosial dan budaya.",
       },
       {
-        title: "Research Project",
-        desc: "Basis data proyek aktif dengan informasi tim, mitra, luaran, dan periode pelaksanaan.",
+        title: "Penelitian Berjalan",
+        desc: "Daftar penelitian yang sedang dikerjakan beserta tim, mitra, dan waktu pelaksanaannya.",
       },
       {
-        title: "Penelitian Unggulan",
-        desc: "Proyek terpilih dengan dampak terukur, publikasi bereputasi, dan replikasi di lokasi lain.",
+        title: "Inovasi & Paten",
+        desc: "Alat dan aplikasi hasil penelitian yang sudah diuji, sebagian telah didaftarkan hak kekayaan intelektualnya.",
       },
       {
-        title: "Inovasi & Prototipe",
-        desc: "Purwarupa alat, sistem informasi, dan model intervensi yang telah diuji terbatas di lapangan.",
-      },
-      {
-        title: "HKI / Paten",
-        desc: "Pendampingan pencatatan hak cipta, paten sederhana, desain industri, dan merek atas luaran riset.",
-      },
-      {
-        title: "Hilirisasi",
-        desc: "Jalur adopsi hasil riset melalui lisensi, kemitraan industri, dan implementasi program pemerintah daerah.",
+        title: "Arah Riset",
+        desc: "Rencana penelitian lima tahun ke depan agar kegiatan lebih terarah dan hasilnya terukur.",
       },
     ],
   },
   {
     slug: "pengabdian",
-    label: "Pengabdian & Dampak",
-    title: "Pengabdian & Dampak",
-    tagline: "Pengetahuan yang bekerja di tengah masyarakat",
+    label: "Pengabdian",
+    title: "Pengabdian kepada Masyarakat",
+    tagline: "Hasil riset yang langsung dirasakan warga",
     intro:
-      "Program pengabdian dirancang berbasis temuan riset, dijalankan bersama komunitas, dan dievaluasi dengan indikator dampak.",
+      "Kami mendampingi desa, sekolah, dan usaha kecil dengan program yang disusun dari hasil penelitian dan dievaluasi bersama warga.",
     subs: [
       {
-        title: "Program PkM",
-        desc: "Pengabdian kepada masyarakat tematik: literasi kesehatan, penguatan UMKM, pendampingan sekolah, dan mitigasi bencana.",
+        title: "Program Masyarakat",
+        desc: "Kegiatan seperti penyuluhan kesehatan, pendampingan UMKM, dan pelatihan untuk sekolah.",
       },
       {
-        title: "Masyarakat Binaan",
-        desc: "Desa dan komunitas mitra yang didampingi multitahun dengan pendekatan partisipatif.",
+        title: "Desa & Mitra Binaan",
+        desc: "Desa dan komunitas yang kami dampingi secara berkelanjutan selama beberapa tahun.",
       },
       {
-        title: "Program Unggulan",
-        desc: "Model intervensi yang terbukti berhasil dan siap direplikasi oleh pemerintah maupun mitra lain.",
+        title: "Dampak Program",
+        desc: "Perubahan yang tercatat: layanan lebih cepat, kebiasaan lebih sehat, pendapatan meningkat.",
       },
       {
-        title: "Impact / Dampak",
-        desc: "Laporan dampak sosial dan ekonomi: perubahan perilaku, efisiensi layanan, dan peningkatan pendapatan.",
+        title: "Ikut Serta",
+        desc: "Warga, komunitas, atau instansi dapat mengusulkan program pendampingan melalui halaman Kontak.",
       },
     ],
   },
   {
-    slug: "publikasi",
-    label: "Publikasi",
-    title: "Publikasi",
-    tagline: "Rekam jejak ilmiah yang terbuka dan tertelusur",
+    slug: "publikasi-dokumen",
+    label: "Publikasi & Dokumen",
+    title: "Publikasi & Dokumen",
+    tagline: "Semua hasil dan dokumen resmi dalam satu tempat",
     intro:
-      "Seluruh luaran dikurasi dan diarsipkan agar mudah diakses akademisi, pembuat kebijakan, dan masyarakat umum.",
+      "Hasil penelitian kami terbuka untuk dibaca siapa pun, mulai dari artikel ilmiah hingga ringkasan singkat dan infografis.",
     subs: [
-      { title: "Jurnal", desc: "Artikel pada jurnal nasional terakreditasi dan jurnal internasional terindeks." },
-      { title: "Buku", desc: "Buku referensi, monograf, dan bunga rampai hasil kajian klaster." },
-      { title: "Policy Brief", desc: "Ringkasan kebijakan 2–4 halaman dengan rekomendasi tindakan yang operasional." },
-      { title: "Research Brief", desc: "Ringkasan temuan riset untuk kalangan praktisi dan mitra program." },
-      { title: "Laporan", desc: "Laporan akhir penelitian, laporan program, dan laporan evaluasi mitra." },
-      { title: "Artikel Populer", desc: "Tulisan opini dan penjelasan ilmiah untuk media massa dan kanal digital." },
-      { title: "Repository", desc: "Arsip digital naskah, data pendukung, dan materi presentasi yang dapat diunduh." },
+      {
+        title: "Jurnal & Buku",
+        desc: "Artikel ilmiah dan buku hasil kajian yang telah diterbitkan.",
+      },
+      {
+        title: "Ringkasan Kebijakan",
+        desc: "Ringkasan dua sampai empat halaman berisi temuan penting dan saran tindakan.",
+      },
+      {
+        title: "Materi Populer",
+        desc: "Infografis, video singkat, dan artikel media untuk pembaca umum.",
+      },
+      {
+        title: "Dokumen Resmi",
+        desc: "Rencana kerja, panduan, format berkas, dan laporan tahunan yang dapat diunduh.",
+      },
     ],
   },
   {
-    slug: "researchers",
-    label: "Researchers",
-    title: "Researchers",
-    tagline: "Orang-orang di balik setiap temuan",
+    slug: "layanan-kerjasama",
+    label: "Layanan & Kerja Sama",
+    title: "Layanan & Kerja Sama",
+    tagline: "Dukungan riset untuk mitra dan mahasiswa",
     intro:
-      "Peneliti dikelompokkan menurut keahlian dan kelompok riset sehingga mitra dapat menemukan pakar yang tepat dengan cepat.",
+      "Kami membuka layanan kajian dan kerja sama bagi instansi, dunia usaha, komunitas, serta mahasiswa yang ingin belajar meneliti.",
     subs: [
-      { title: "Daftar Peneliti", desc: "Direktori peneliti dengan afiliasi fakultas, jabatan fungsional, dan kontak resmi." },
-      { title: "Expertise", desc: "Peta keahlian: epidemiologi, kebijakan publik, ekonometrika, rekayasa perangkat lunak, dan lain-lain." },
-      { title: "Research Group", desc: "Kelompok riset dengan agenda bersama, pertemuan berkala, dan target luaran tahunan." },
-      { title: "Profil Peneliti", desc: "Halaman profil berisi riwayat pendidikan, publikasi terpilih, dan proyek berjalan." },
-    ],
-  },
-  {
-    slug: "kolaborasi",
-    label: "Kolaborasi",
-    title: "Kolaborasi",
-    tagline: "Riset tumbuh lebih cepat bersama mitra",
-    intro:
-      "Kami membuka kerja sama dengan universitas, kementerian, pemerintah daerah, industri, dan organisasi masyarakat sipil.",
-    subs: [
-      { title: "Mitra", desc: "Daftar mitra aktif beserta bentuk kerja sama dan periode perjanjian." },
-      { title: "Research Partnership", desc: "Kemitraan riset jangka menengah dengan pembagian peran dan sumber daya yang jelas." },
-      { title: "Joint Research", desc: "Penelitian bersama lintas institusi, termasuk pertukaran peneliti dan penulisan bersama." },
-      { title: "Layanan Narasumber", desc: "Permintaan pembicara untuk seminar, pelatihan, uji publik, dan diskusi kebijakan." },
-      { title: "Ajukan Kolaborasi", desc: "Formulir pengajuan gagasan kerja sama yang ditindaklanjuti maksimal 7 hari kerja." },
-    ],
-  },
-  {
-    slug: "layanan",
-    label: "Layanan",
-    title: "Layanan",
-    tagline: "Dukungan profesional berbasis kapasitas riset",
-    intro:
-      "Layanan dirancang untuk institusi, dunia usaha, dan mahasiswa yang membutuhkan dukungan metodologis maupun analitis.",
-    subs: [
-      { title: "Konsultasi", desc: "Pendampingan perumusan masalah, desain riset, dan interpretasi temuan." },
-      { title: "Data & Riset", desc: "Pengumpulan data lapangan, survei, dan analisis statistik dengan protokol etik." },
-      { title: "Training", desc: "Pelatihan metodologi, analisis data, penulisan ilmiah, dan manajemen riset." },
-      { title: "Consulting", desc: "Kajian kelayakan, evaluasi program, dan penyusunan dokumen perencanaan." },
-      { title: "Magang", desc: "Program magang riset bagi mahasiswa dengan pembimbingan langsung peneliti." },
-      { title: "Research Assistant", desc: "Rekrutmen asisten riset terbuka untuk mahasiswa berprestasi setiap semester." },
-    ],
-  },
-  {
-    slug: "opportunities",
-    label: "Opportunities",
-    title: "Opportunities",
-    tagline: "Ruang tumbuh untuk peneliti dan mahasiswa",
-    intro:
-      "Informasi pendanaan, panggilan naskah, dan kesempatan pengembangan kapasitas diperbarui secara berkala.",
-    subs: [
-      { title: "Research Grant", desc: "Skema hibah internal dan kanal informasi hibah nasional maupun internasional." },
-      { title: "Call for Proposal", desc: "Pengumuman penerimaan proposal beserta panduan, format, dan tenggat waktu." },
-      { title: "Call for Paper", desc: "Ajakan mengirim artikel untuk konferensi dan terbitan khusus yang dikelola pusat studi." },
-      { title: "Internship", desc: "Kesempatan magang riset bagi mahasiswa internal dan mitra universitas lain." },
-      { title: "Student Research", desc: "Pendanaan kecil dan pendampingan untuk riset mandiri mahasiswa." },
+      {
+        title: "Layanan Kajian",
+        desc: "Survei, analisis data, evaluasi program, dan penyusunan dokumen perencanaan.",
+      },
+      {
+        title: "Pelatihan & Narasumber",
+        desc: "Pelatihan metode penelitian dan penulisan, serta permintaan pembicara untuk kegiatan Anda.",
+      },
+      {
+        title: "Cara Mengajukan Kerja Sama",
+        desc: "Kirim gagasan melalui halaman Kontak; kami balas paling lama tujuh hari kerja.",
+      },
+      {
+        title: "Peluang untuk Mahasiswa",
+        desc: "Magang riset, asisten peneliti, dan bantuan dana kecil untuk penelitian mandiri.",
+      },
+      {
+        title: "Informasi Hibah",
+        desc: "Pengumuman hibah penelitian dan ajakan pengiriman proposal yang diperbarui berkala.",
+      },
     ],
   },
   {
@@ -222,46 +163,21 @@ export const sections: Section[] = [
     label: "Berita & Agenda",
     title: "Berita & Agenda",
     tagline: "Kabar terbaru dan jadwal kegiatan",
-    intro: "Ikuti perkembangan kegiatan pusat studi, mulai dari kabar riset hingga undangan kegiatan terbuka.",
-    subs: [
-      { title: "Berita", desc: "Kabar capaian riset, kunjungan mitra, penghargaan, dan peluncuran program." },
-      { title: "Agenda", desc: "Kalender kegiatan bulanan yang dapat diikuti internal maupun publik." },
-      { title: "Seminar", desc: "Seminar nasional dan kuliah umum dengan narasumber pakar." },
-      { title: "Workshop", desc: "Lokakarya keterampilan riset dan penulisan dengan kapasitas terbatas." },
-      { title: "FGD", desc: "Diskusi terarah bersama pemangku kepentingan untuk menguji temuan dan rekomendasi." },
-      { title: "Call for Paper", desc: "Pengumuman penerimaan naskah untuk kegiatan ilmiah yang akan datang." },
-    ],
-  },
-  {
-    slug: "knowledge-hub",
-    label: "Knowledge Hub",
-    title: "Knowledge Hub",
-    tagline: "Pengetahuan dalam format yang mudah dicerna",
     intro:
-      "Temuan riset diterjemahkan ke ragam format agar dapat digunakan oleh audiens yang berbeda tanpa kehilangan ketepatan.",
+      "Ikuti kabar kegiatan kami dan jadwal acara yang terbuka untuk umum, seperti seminar, pelatihan, dan diskusi publik.",
     subs: [
-      { title: "Research Brief", desc: "Ringkasan temuan yang padat, disertai visual data utama." },
-      { title: "Policy Brief", desc: "Rekomendasi kebijakan yang siap dibawa ke meja pengambil keputusan." },
-      { title: "Infografis", desc: "Visualisasi data untuk kebutuhan sosialisasi dan advokasi." },
-      { title: "Video", desc: "Penjelasan singkat hasil riset serta dokumentasi kegiatan lapangan." },
-      { title: "Podcast", desc: "Percakapan berkala dengan peneliti dan mitra tentang isu terkini." },
-      { title: "FAQ", desc: "Jawaban atas pertanyaan yang sering diajukan tentang layanan dan kerja sama." },
-    ],
-  },
-  {
-    slug: "dokumen",
-    label: "Dokumen",
-    title: "Dokumen",
-    tagline: "Dokumen resmi dan perangkat kerja",
-    intro: "Semua dokumen tata kelola dan perangkat administrasi riset tersedia dalam satu tempat.",
-    subs: [
-      { title: "SK", desc: "Surat keputusan pendirian, pengangkatan pengelola, dan penetapan program." },
-      { title: "Renstra", desc: "Rencana strategis lima tahun beserta indikator kinerja utama." },
-      { title: "Roadmap", desc: "Peta jalan riset per klaster dengan target luaran tahunan." },
-      { title: "Panduan", desc: "Panduan pengajuan penelitian, pengabdian, dan pelaporan luaran." },
-      { title: "Template", desc: "Format proposal, laporan, policy brief, dan poster ilmiah." },
-      { title: "SOP", desc: "Prosedur baku layanan, etik penelitian, dan pengelolaan data." },
-      { title: "Laporan Tahunan", desc: "Rekapitulasi kinerja, capaian, dan penggunaan anggaran setiap tahun." },
+      {
+        title: "Berita Terbaru",
+        desc: "Kabar hasil penelitian, kunjungan mitra, penghargaan, dan program baru.",
+      },
+      {
+        title: "Agenda Kegiatan",
+        desc: "Jadwal seminar, pelatihan, dan diskusi yang bisa diikuti masyarakat umum.",
+      },
+      {
+        title: "Galeri",
+        desc: "Foto dan dokumentasi singkat dari kegiatan kami di kampus maupun di lapangan.",
+      },
     ],
   },
 ];
@@ -270,7 +186,7 @@ export const getSection = (slug: string) => sections.find((s) => s.slug === slug
 
 export const stats = [
   { value: "120+", label: "Penelitian aktif" },
-  { value: "48", label: "Publikasi terindeks" },
+  { value: "48", label: "Publikasi ilmiah" },
   { value: "26", label: "Mitra kerja sama" },
   { value: "15", label: "Desa binaan" },
 ];
