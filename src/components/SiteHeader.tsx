@@ -4,8 +4,6 @@ import { Menu, X, ChevronDown, GraduationCap } from "lucide-react";
 import { sections, SITE, type Section } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
-const primary = sections.slice(0, 7);
-const rest = sections.slice(7);
 
 function MenuItem({ section: s }: { section: Section }) {
   return (
