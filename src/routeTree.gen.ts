@@ -21,6 +21,7 @@ import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PengabdianRouteImport } from './routes/pengabdian'
 import { Route as ProfilRouteImport } from './routes/profil'
 import { Route as PublikasiRouteImport } from './routes/publikasi'
+import { Route as PublikasiDokumenRouteImport } from './routes/publikasi-dokumen'
 import { Route as ResearchersRouteImport } from './routes/researchers'
 import { Route as RisetInovasiRouteImport } from './routes/riset-inovasi'
 
@@ -84,6 +85,11 @@ const PublikasiRoute = PublikasiRouteImport.update({
   path: '/publikasi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PublikasiDokumenRoute = PublikasiDokumenRouteImport.update({
+  id: '/publikasi-dokumen',
+  path: '/publikasi-dokumen',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResearchersRoute = ResearchersRouteImport.update({
   id: '/researchers',
   path: '/researchers',
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
   '/publikasi': typeof PublikasiRoute
+  '/publikasi-dokumen': typeof PublikasiDokumenRoute
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
 }
@@ -124,6 +131,7 @@ export interface FileRoutesByTo {
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
   '/publikasi': typeof PublikasiRoute
+  '/publikasi-dokumen': typeof PublikasiDokumenRoute
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
 }
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
   '/publikasi': typeof PublikasiRoute
+  '/publikasi-dokumen': typeof PublikasiDokumenRoute
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
 }
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/pengabdian'
     | '/profil'
     | '/publikasi'
+    | '/publikasi-dokumen'
     | '/researchers'
     | '/riset-inovasi'
   fileRoutesByTo: FileRoutesByTo
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
     | '/pengabdian'
     | '/profil'
     | '/publikasi'
+    | '/publikasi-dokumen'
     | '/researchers'
     | '/riset-inovasi'
   id:
@@ -191,6 +202,7 @@ export interface FileRouteTypes {
     | '/pengabdian'
     | '/profil'
     | '/publikasi'
+    | '/publikasi-dokumen'
     | '/researchers'
     | '/riset-inovasi'
   fileRoutesById: FileRoutesById
@@ -208,6 +220,7 @@ export interface RootRouteChildren {
   PengabdianRoute: typeof PengabdianRoute
   ProfilRoute: typeof ProfilRoute
   PublikasiRoute: typeof PublikasiRoute
+  PublikasiDokumenRoute: typeof PublikasiDokumenRoute
   ResearchersRoute: typeof ResearchersRoute
   RisetInovasiRoute: typeof RisetInovasiRoute
 }
@@ -298,6 +311,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublikasiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/publikasi-dokumen': {
+      id: '/publikasi-dokumen'
+      path: '/publikasi-dokumen'
+      fullPath: '/publikasi-dokumen'
+      preLoaderRoute: typeof PublikasiDokumenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/researchers': {
       id: '/researchers'
       path: '/researchers'
@@ -328,6 +348,7 @@ const rootRouteChildren: RootRouteChildren = {
   PengabdianRoute: PengabdianRoute,
   ProfilRoute: ProfilRoute,
   PublikasiRoute: PublikasiRoute,
+  PublikasiDokumenRoute: PublikasiDokumenRoute,
   ResearchersRoute: ResearchersRoute,
   RisetInovasiRoute: RisetInovasiRoute,
 }
