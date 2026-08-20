@@ -25,11 +25,19 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { icon: Compass, title: "Fokus Kajian", slug: "fokus-kajian", text: "Klaster tematik dan peta jalan riset lima tahun." },
-  { icon: FlaskConical, title: "Riset & Inovasi", slug: "riset-inovasi", text: "Dari proyek penelitian hingga prototipe dan paten." },
-  { icon: HandHeart, title: "Pengabdian", slug: "pengabdian", text: "Program bersama komunitas dengan dampak terukur." },
-  { icon: BookOpen, title: "Publikasi", slug: "publikasi", text: "Jurnal, buku, policy brief, dan repository terbuka." },
+  { icon: FlaskConical, title: "Riset & Inovasi", slug: "riset-inovasi", text: "Penelitian dosen dan mahasiswa yang berujung pada solusi yang bisa dipakai." },
+  { icon: HandHeart, title: "Pengabdian", slug: "pengabdian", text: "Pendampingan desa, sekolah, dan usaha kecil bersama warga." },
+  { icon: BookOpen, title: "Publikasi & Dokumen", slug: "publikasi-dokumen", text: "Jurnal, buku, ringkasan kebijakan, dan dokumen yang bisa diunduh." },
+  { icon: Compass, title: "Layanan & Kerja Sama", slug: "layanan-kerjasama", text: "Layanan kajian untuk mitra serta peluang magang riset mahasiswa." },
 ];
+
+const audiences = [
+  { who: "Mahasiswa", need: "Magang riset, asisten peneliti, dan bantuan dana penelitian.", slug: "layanan-kerjasama" },
+  { who: "Dosen & Peneliti", need: "Bidang kajian, penelitian berjalan, dan arah riset Pusat Studi.", slug: "riset-inovasi" },
+  { who: "Mitra & Instansi", need: "Layanan kajian, pelatihan, dan cara mengajukan kerja sama.", slug: "layanan-kerjasama" },
+  { who: "Masyarakat Umum", need: "Program pendampingan, agenda terbuka, dan bacaan hasil riset.", slug: "pengabdian" },
+];
+
 
 function Beranda() {
   return (
