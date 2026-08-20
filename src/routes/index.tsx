@@ -110,15 +110,17 @@ function Beranda() {
         {/* marquee */}
         <div className="relative overflow-hidden border-t border-primary-foreground/10 py-4">
           <div className="flex w-max marquee-track gap-10 whitespace-nowrap text-xs uppercase tracking-[0.3em] text-primary-foreground/45">
-            {Array.from({ length: 2 }).map((_, r) => (
+            {Array.from({ length: 4 }).map((_, r) => (
               <span key={r} className="flex gap-10">
-                {sections.map((s) => (
-                  <span key={s.slug}>{s.label} ·</span>
-                ))}
+                <span>Penelitian ·</span>
+                <span>Inovasi ·</span>
+                <span>Pengabdian ·</span>
+                <span>Kerja sama ·</span>
               </span>
             ))}
           </div>
         </div>
+
       </section>
 
       {/* Stats */}
