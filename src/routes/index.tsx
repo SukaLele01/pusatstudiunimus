@@ -78,7 +78,8 @@ function Beranda() {
                   Kenali Pusat Studi <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  to="/kolaborasi"
+                  to="/layanan-kerjasama"
+
                   className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:border-gold hover:text-gold"
                 >
                   Ajukan kolaborasi
