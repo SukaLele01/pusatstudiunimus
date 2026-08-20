@@ -186,41 +186,57 @@ function Beranda() {
         </Reveal>
       </section>
 
-      {/* All sections directory */}
+      {/* Untuk Anda */}
+      <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.28em] text-gold">Untuk Anda</p>
+          <h2 className="mt-4 text-3xl text-navy-deep sm:text-4xl">Mulai dari kebutuhan Anda</h2>
+          <span className="mt-5 block rule-gold" />
+        </Reveal>
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {audiences.map((a, i) => (
+            <Reveal key={a.who} delay={i * 80}>
+              <Link
+                to={"/" + a.slug}
+                className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft"
+              >
+                <p className="font-display text-lg text-navy-deep">{a.who}</p>
+                <p className="mt-2 flex-1 text-sm text-muted-foreground">{a.need}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Buka halaman
+                  <ArrowRight className="size-4 text-gold transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Menu utama */}
       <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-20">
         <Reveal>
-          <h2 className="text-3xl text-navy-deep sm:text-4xl">Peta situs</h2>
+          <h2 className="text-3xl text-navy-deep sm:text-4xl">Menu utama</h2>
           <span className="mt-5 block rule-gold" />
           <p className="mt-5 max-w-2xl text-muted-foreground">
-            Seluruh kanal informasi pusat studi, tertata rapi dalam dua belas bagian utama.
+            Enam halaman informasi, ditambah halaman Kontak. Setiap halaman berisi poin-poin
+            singkat yang mudah dibaca.
           </p>
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {sections.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 80}>
-              <div className="card-lift h-full rounded-2xl border border-border bg-card p-7 shadow-soft">
-                <Link to={"/" + s.slug} className="link-underline font-display text-xl text-navy-deep">
-                  {s.label}
-                </Link>
-                <p className="mt-3 text-sm text-muted-foreground">{s.tagline}</p>
-                <ul className="mt-5 space-y-1.5 text-sm text-foreground/70">
-                  {s.subs.slice(0, 4).map((sub) => (
-                    <li key={sub.title} className="flex items-start gap-2">
-                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-gold" />
-                      {sub.title}
-                    </li>
-                  ))}
-                  {s.subs.length > 4 && (
-                    <li className="pl-3.5 text-muted-foreground">
-                      +{s.subs.length - 4} lainnya
-                    </li>
-                  )}
-                </ul>
-              </div>
+              <Link
+                to={"/" + s.slug}
+                className="card-lift sheen flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-soft"
+              >
+                <span className="font-display text-xl text-navy-deep">{s.label}</span>
+                <p className="mt-3 text-sm text-muted-foreground">{s.tagline}.</p>
+              </Link>
             </Reveal>
           ))}
         </div>
       </section>
+
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 pb-4 lg:px-8">
