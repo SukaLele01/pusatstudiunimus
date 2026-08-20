@@ -25,11 +25,19 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { icon: Compass, title: "Fokus Kajian", slug: "fokus-kajian", text: "Klaster tematik dan peta jalan riset lima tahun." },
-  { icon: FlaskConical, title: "Riset & Inovasi", slug: "riset-inovasi", text: "Dari proyek penelitian hingga prototipe dan paten." },
-  { icon: HandHeart, title: "Pengabdian", slug: "pengabdian", text: "Program bersama komunitas dengan dampak terukur." },
-  { icon: BookOpen, title: "Publikasi", slug: "publikasi", text: "Jurnal, buku, policy brief, dan repository terbuka." },
+  { icon: FlaskConical, title: "Riset & Inovasi", slug: "riset-inovasi", text: "Penelitian dosen dan mahasiswa yang berujung pada solusi yang bisa dipakai." },
+  { icon: HandHeart, title: "Pengabdian", slug: "pengabdian", text: "Pendampingan desa, sekolah, dan usaha kecil bersama warga." },
+  { icon: BookOpen, title: "Publikasi & Dokumen", slug: "publikasi-dokumen", text: "Jurnal, buku, ringkasan kebijakan, dan dokumen yang bisa diunduh." },
+  { icon: Compass, title: "Layanan & Kerja Sama", slug: "layanan-kerjasama", text: "Layanan kajian untuk mitra serta peluang magang riset mahasiswa." },
 ];
+
+const audiences = [
+  { who: "Mahasiswa", need: "Magang riset, asisten peneliti, dan bantuan dana penelitian.", slug: "layanan-kerjasama" },
+  { who: "Dosen & Peneliti", need: "Bidang kajian, penelitian berjalan, dan arah riset Pusat Studi.", slug: "riset-inovasi" },
+  { who: "Mitra & Instansi", need: "Layanan kajian, pelatihan, dan cara mengajukan kerja sama.", slug: "layanan-kerjasama" },
+  { who: "Masyarakat Umum", need: "Program pendampingan, agenda terbuka, dan bacaan hasil riset.", slug: "pengabdian" },
+];
+
 
 function Beranda() {
   return (
@@ -55,9 +63,11 @@ function Beranda() {
             <Reveal delay={180}>
               <span className="mt-7 block rule-gold" />
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80">
-                {SITE.name} mengelola kajian multidisiplin, inovasi terapan, dan pengabdian
-                masyarakat — dijalankan bersama mitra, dievaluasi dengan indikator yang jelas.
+                {SITE.name} adalah unit riset Universitas Muhammadiyah Semarang. Kami menjalankan
+                penelitian, inovasi, dan program bersama masyarakat — bersama mitra, dengan hasil
+                yang terbuka untuk umum.
               </p>
+
             </Reveal>
             <Reveal delay={260}>
               <div className="mt-9 flex flex-wrap gap-3">
@@ -68,7 +78,7 @@ function Beranda() {
                   Kenali Pusat Studi <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  to="/kolaborasi"
+                  to="/layanan-kerjasama"
                   className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:border-gold hover:text-gold"
                 >
                   Ajukan kolaborasi
@@ -100,15 +110,17 @@ function Beranda() {
         {/* marquee */}
         <div className="relative overflow-hidden border-t border-primary-foreground/10 py-4">
           <div className="flex w-max marquee-track gap-10 whitespace-nowrap text-xs uppercase tracking-[0.3em] text-primary-foreground/45">
-            {Array.from({ length: 2 }).map((_, r) => (
+            {Array.from({ length: 4 }).map((_, r) => (
               <span key={r} className="flex gap-10">
-                {sections.map((s) => (
-                  <span key={s.slug}>{s.label} ·</span>
-                ))}
+                <span>Penelitian ·</span>
+                <span>Inovasi ·</span>
+                <span>Pengabdian ·</span>
+                <span>Kerja sama ·</span>
               </span>
             ))}
           </div>
         </div>
+
       </section>
 
       {/* Stats */}
@@ -176,41 +188,57 @@ function Beranda() {
         </Reveal>
       </section>
 
-      {/* All sections directory */}
+      {/* Untuk Anda */}
+      <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.28em] text-gold">Untuk Anda</p>
+          <h2 className="mt-4 text-3xl text-navy-deep sm:text-4xl">Mulai dari kebutuhan Anda</h2>
+          <span className="mt-5 block rule-gold" />
+        </Reveal>
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {audiences.map((a, i) => (
+            <Reveal key={a.who} delay={i * 80}>
+              <Link
+                to={"/" + a.slug}
+                className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft"
+              >
+                <p className="font-display text-lg text-navy-deep">{a.who}</p>
+                <p className="mt-2 flex-1 text-sm text-muted-foreground">{a.need}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Buka halaman
+                  <ArrowRight className="size-4 text-gold transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Menu utama */}
       <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-20">
         <Reveal>
-          <h2 className="text-3xl text-navy-deep sm:text-4xl">Peta situs</h2>
+          <h2 className="text-3xl text-navy-deep sm:text-4xl">Menu utama</h2>
           <span className="mt-5 block rule-gold" />
           <p className="mt-5 max-w-2xl text-muted-foreground">
-            Seluruh kanal informasi pusat studi, tertata rapi dalam dua belas bagian utama.
+            Enam halaman informasi, ditambah halaman Kontak. Setiap halaman berisi poin-poin
+            singkat yang mudah dibaca.
           </p>
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {sections.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 80}>
-              <div className="card-lift h-full rounded-2xl border border-border bg-card p-7 shadow-soft">
-                <Link to={"/" + s.slug} className="link-underline font-display text-xl text-navy-deep">
-                  {s.label}
-                </Link>
-                <p className="mt-3 text-sm text-muted-foreground">{s.tagline}</p>
-                <ul className="mt-5 space-y-1.5 text-sm text-foreground/70">
-                  {s.subs.slice(0, 4).map((sub) => (
-                    <li key={sub.title} className="flex items-start gap-2">
-                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-gold" />
-                      {sub.title}
-                    </li>
-                  ))}
-                  {s.subs.length > 4 && (
-                    <li className="pl-3.5 text-muted-foreground">
-                      +{s.subs.length - 4} lainnya
-                    </li>
-                  )}
-                </ul>
-              </div>
+              <Link
+                to={"/" + s.slug}
+                className="card-lift sheen flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-soft"
+              >
+                <span className="font-display text-xl text-navy-deep">{s.label}</span>
+                <p className="mt-3 text-sm text-muted-foreground">{s.tagline}.</p>
+              </Link>
             </Reveal>
           ))}
         </div>
       </section>
+
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 pb-4 lg:px-8">
