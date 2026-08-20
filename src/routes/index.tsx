@@ -63,9 +63,11 @@ function Beranda() {
             <Reveal delay={180}>
               <span className="mt-7 block rule-gold" />
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80">
-                {SITE.name} mengelola kajian multidisiplin, inovasi terapan, dan pengabdian
-                masyarakat — dijalankan bersama mitra, dievaluasi dengan indikator yang jelas.
+                {SITE.name} adalah unit riset Universitas Muhammadiyah Semarang. Kami menjalankan
+                penelitian, inovasi, dan program bersama masyarakat — bersama mitra, dengan hasil
+                yang terbuka untuk umum.
               </p>
+
             </Reveal>
             <Reveal delay={260}>
               <div className="mt-9 flex flex-wrap gap-3">
