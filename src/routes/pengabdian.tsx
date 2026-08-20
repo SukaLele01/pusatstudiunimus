@@ -7,10 +7,19 @@ const section = getSection("pengabdian");
 export const Route = createFileRoute("/pengabdian")({
   head: () => ({
     meta: [
-      { title: "Pengabdian & Dampak — Pusat Studi Riset & Inovasi" },
-      { name: "description", content: "Pengabdian & Dampak: Dari pertanyaan penelitian hingga produk yang dipakai. Informasi resmi Pusat Studi Riset & Inovasi Unimus." },
-      { property: "og:title", content: "Pengabdian & Dampak — Pusat Studi Riset & Inovasi" },
-      { property: "og:description", content: "Pengabdian & Dampak: Dari pertanyaan penelitian hingga produk yang dipakai. Informasi resmi Pusat Studi Riset & Inovasi Unimus." },
+      { title: "Pengabdian kepada Masyarakat — Pusat Studi Unimus" },
+      {
+        name: "description",
+        content:
+          "Program pendampingan desa, sekolah, dan usaha kecil oleh Pusat Studi Unimus, beserta dampaknya dan cara warga ikut serta.",
+      },
+      { property: "og:title", content: "Pengabdian kepada Masyarakat — Pusat Studi Unimus" },
+      {
+        property: "og:description",
+        content: "Hasil riset yang langsung dirasakan warga melalui pendampingan berkelanjutan.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: () => <SectionPage section={section} />,
