@@ -30,21 +30,24 @@ export function SiteFooter() {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-3">
-            {chunk(sections, 5).map((group, i) => (
-              <ul key={i} className="space-y-2.5 text-sm">
-                {group.map((s) => (
-                  <li key={s.slug}>
-                    <Link
-                      to={"/" + s.slug}
-                      className="link-underline inline-block text-primary-foreground/80 transition-colors hover:text-gold"
-                    >
-                      {s.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ))}
+            {chunk([...sections.map((s) => ({ slug: s.slug, label: s.label })), { slug: "kontak", label: "Kontak" }], 3).map(
+              (group, i) => (
+                <ul key={i} className="space-y-2.5 text-sm">
+                  {group.map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        to={"/" + s.slug}
+                        className="link-underline inline-block text-primary-foreground/80 transition-colors hover:text-gold"
+                      >
+                        {s.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ),
+            )}
           </div>
+
         </div>
 
         <div className="mt-14 flex flex-col gap-2 border-t border-primary-foreground/15 pt-6 text-xs text-primary-foreground/60 sm:flex-row sm:items-center sm:justify-between">
