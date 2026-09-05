@@ -6,6 +6,8 @@ export type Section = {
   title: string;
   tagline: string;
   intro: string;
+  /** Sembunyikan dropdown submenu di navigasi (halaman tunggal). */
+  flat?: boolean;
   subs: SubItem[];
 };
 
@@ -117,6 +119,7 @@ export const sections: Section[] = [
     label: "Mitra",
     title: "Mitra & Kerja Sama",
     tagline: "Dukungan riset untuk mitra, instansi, dan mahasiswa",
+    flat: true,
     intro:
       "Kami membuka layanan kajian dan kerja sama bagi instansi, dunia usaha, komunitas, serta mahasiswa yang ingin belajar meneliti.",
     subs: [
