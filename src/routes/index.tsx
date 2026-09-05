@@ -72,13 +72,13 @@ function Beranda() {
             <Reveal delay={260}>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link
-                  to="/profil"
+                  to="/tentang-kami"
                   className="sheen inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground shadow-soft transition-all hover:-translate-y-0.5"
                 >
                   Kenali Pusat Studi <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  to="/layanan-kerjasama"
+                  to="/mitra"
                   className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:border-gold hover:text-gold"
                 >
                   Ajukan kolaborasi
@@ -115,7 +115,7 @@ function Beranda() {
                 <span>Penelitian ·</span>
                 <span>Inovasi ·</span>
                 <span>Pengabdian ·</span>
-                <span>Kerja sama ·</span>
+                <span>Kemitraan ·</span>
               </span>
             ))}
           </div>
@@ -220,7 +220,7 @@ function Beranda() {
           <h2 className="text-3xl text-navy-deep sm:text-4xl">Menu utama</h2>
           <span className="mt-5 block rule-gold" />
           <p className="mt-5 max-w-2xl text-muted-foreground">
-            Enam halaman informasi, ditambah halaman Kontak. Setiap halaman berisi poin-poin
+            Lima halaman informasi, ditambah halaman Kontak. Setiap halaman berisi poin-poin
             singkat yang mudah dibaca.
           </p>
         </Reveal>
