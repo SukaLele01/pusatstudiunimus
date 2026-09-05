@@ -25,17 +25,17 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { icon: FlaskConical, title: "Riset & Inovasi", slug: "riset-inovasi", text: "Penelitian dosen dan mahasiswa yang berujung pada solusi yang bisa dipakai." },
-  { icon: HandHeart, title: "Pengabdian", slug: "pengabdian", text: "Pendampingan desa, sekolah, dan usaha kecil bersama warga." },
-  { icon: BookOpen, title: "Publikasi & Dokumen", slug: "publikasi-dokumen", text: "Jurnal, buku, ringkasan kebijakan, dan dokumen yang bisa diunduh." },
-  { icon: Compass, title: "Layanan & Kerja Sama", slug: "layanan-kerjasama", text: "Layanan kajian untuk mitra serta peluang magang riset mahasiswa." },
+  { icon: HandHeart, title: "Program", slug: "program", text: "Pengabdian, pemberdayaan, dan desa binaan, bersama penelitian dosen dan mahasiswa." },
+  { icon: FlaskConical, title: "Kegiatan", slug: "kegiatan", text: "Berita, agenda acara terbuka, dan dokumentasi kegiatan kami." },
+  { icon: BookOpen, title: "Publikasi", slug: "publikasi", text: "Artikel ilmiah, bacaan populer, dan laporan yang bisa diunduh." },
+  { icon: Compass, title: "Mitra", slug: "mitra", text: "Layanan kajian untuk mitra serta peluang magang riset mahasiswa." },
 ];
 
 const audiences = [
-  { who: "Mahasiswa", need: "Magang riset, asisten peneliti, dan bantuan dana penelitian.", slug: "layanan-kerjasama" },
-  { who: "Dosen & Peneliti", need: "Bidang kajian, penelitian berjalan, dan arah riset Pusat Studi.", slug: "riset-inovasi" },
-  { who: "Mitra & Instansi", need: "Layanan kajian, pelatihan, dan cara mengajukan kerja sama.", slug: "layanan-kerjasama" },
-  { who: "Masyarakat Umum", need: "Program pendampingan, agenda terbuka, dan bacaan hasil riset.", slug: "pengabdian" },
+  { who: "Mahasiswa", need: "Magang riset, asisten peneliti, dan bantuan dana penelitian.", slug: "mitra" },
+  { who: "Dosen & Peneliti", need: "Bidang kajian, penelitian berjalan, dan inovasi Pusat Studi.", slug: "program" },
+  { who: "Mitra & Instansi", need: "Layanan kajian, pelatihan, dan cara mengajukan kerja sama.", slug: "mitra" },
+  { who: "Masyarakat Umum", need: "Program pendampingan, agenda terbuka, dan bacaan hasil riset.", slug: "kegiatan" },
 ];
 
 
@@ -72,13 +72,13 @@ function Beranda() {
             <Reveal delay={260}>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link
-                  to="/profil"
+                  to="/tentang-kami"
                   className="sheen inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground shadow-soft transition-all hover:-translate-y-0.5"
                 >
                   Kenali Pusat Studi <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  to="/layanan-kerjasama"
+                  to="/mitra"
                   className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:border-gold hover:text-gold"
                 >
                   Ajukan kolaborasi
@@ -115,7 +115,7 @@ function Beranda() {
                 <span>Penelitian ·</span>
                 <span>Inovasi ·</span>
                 <span>Pengabdian ·</span>
-                <span>Kerja sama ·</span>
+                <span>Kemitraan ·</span>
               </span>
             ))}
           </div>
@@ -220,7 +220,7 @@ function Beranda() {
           <h2 className="text-3xl text-navy-deep sm:text-4xl">Menu utama</h2>
           <span className="mt-5 block rule-gold" />
           <p className="mt-5 max-w-2xl text-muted-foreground">
-            Enam halaman informasi, ditambah halaman Kontak. Setiap halaman berisi poin-poin
+            Lima halaman informasi, ditambah halaman Kontak. Setiap halaman berisi poin-poin
             singkat yang mudah dibaca.
           </p>
         </Reveal>

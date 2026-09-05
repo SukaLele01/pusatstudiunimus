@@ -6,6 +6,17 @@ import { cn } from "@/lib/utils";
 
 
 function MenuItem({ section: s }: { section: Section }) {
+  if (s.flat) {
+    return (
+      <Link
+        to={"/" + s.slug}
+        className="rounded-md px-2.5 py-2 text-[13px] font-medium text-foreground/80 transition-colors hover:text-primary"
+        activeProps={{ className: "text-primary" }}
+      >
+        {s.label}
+      </Link>
+    );
+  }
   return (
     <div className="group relative">
       <Link
@@ -110,7 +121,17 @@ export function SiteHeader() {
           >
             Beranda
           </Link>
-          {sections.map((s) => (
+          {sections.map((s) =>
+            s.flat ? (
+              <Link
+                key={s.slug}
+                to={"/" + s.slug}
+                onClick={() => setOpen(false)}
+                className="block border-b border-border/70 px-3 py-2.5 font-medium text-foreground"
+              >
+                {s.label}
+              </Link>
+            ) : (
             <div key={s.slug} className="border-b border-border/70 last:border-0">
               <button
                 onClick={() => setExpanded(expanded === s.slug ? null : s.slug)}
@@ -147,7 +168,8 @@ export function SiteHeader() {
                 </div>
               )}
             </div>
-          ))}
+            ),
+          )}
           <Link
             to="/kontak"
             onClick={() => setOpen(false)}

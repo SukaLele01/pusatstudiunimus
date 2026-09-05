@@ -2,21 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SectionPage } from "@/components/SectionPage";
 import { getSection } from "@/lib/site-data";
 
-const section = getSection("publikasi");
+const section = getSection("tentang-kami");
 
-export const Route = createFileRoute("/publikasi")({
+export const Route = createFileRoute("/tentang-kami")({
   head: () => ({
     meta: [
-      { title: "Publikasi — Artikel & Laporan" },
+      { title: "Tentang Kami — Pusat Studi Unimus" },
       {
         name: "description",
         content:
-          "Artikel ilmiah, buku, bacaan populer, ringkasan kebijakan, dan laporan Pusat Studi Unimus yang dapat diunduh.",
+          "Profil, visi dan misi, serta struktur organisasi Pusat Studi Universitas Muhammadiyah Semarang.",
       },
-      { property: "og:title", content: "Publikasi — Pusat Studi Unimus" },
+      { property: "og:title", content: "Tentang Kami — Pusat Studi Unimus" },
       {
         property: "og:description",
-        content: "Hasil kajian dan dokumen resmi kami, terbuka untuk dibaca siapa pun.",
+        content: "Siapa kami dan apa yang kami kerjakan sebagai unit riset Unimus.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

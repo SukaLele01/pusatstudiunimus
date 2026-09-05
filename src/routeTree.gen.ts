@@ -13,18 +13,22 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BeritaAgendaRouteImport } from './routes/berita-agenda'
 import { Route as DokumenRouteImport } from './routes/dokumen'
 import { Route as FokusKajianRouteImport } from './routes/fokus-kajian'
+import { Route as KegiatanRouteImport } from './routes/kegiatan'
 import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as KolaborasiRouteImport } from './routes/kolaborasi'
 import { Route as KontakRouteImport } from './routes/kontak'
 import { Route as LayananRouteImport } from './routes/layanan'
 import { Route as LayananKerjasamaRouteImport } from './routes/layanan-kerjasama'
+import { Route as MitraRouteImport } from './routes/mitra'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PengabdianRouteImport } from './routes/pengabdian'
 import { Route as ProfilRouteImport } from './routes/profil'
+import { Route as ProgramRouteImport } from './routes/program'
 import { Route as PublikasiRouteImport } from './routes/publikasi'
 import { Route as PublikasiDokumenRouteImport } from './routes/publikasi-dokumen'
 import { Route as ResearchersRouteImport } from './routes/researchers'
 import { Route as RisetInovasiRouteImport } from './routes/riset-inovasi'
+import { Route as TentangKamiRouteImport } from './routes/tentang-kami'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -44,6 +48,11 @@ const DokumenRoute = DokumenRouteImport.update({
 const FokusKajianRoute = FokusKajianRouteImport.update({
   id: '/fokus-kajian',
   path: '/fokus-kajian',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KegiatanRoute = KegiatanRouteImport.update({
+  id: '/kegiatan',
+  path: '/kegiatan',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
@@ -71,6 +80,11 @@ const LayananKerjasamaRoute = LayananKerjasamaRouteImport.update({
   path: '/layanan-kerjasama',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MitraRoute = MitraRouteImport.update({
+  id: '/mitra',
+  path: '/mitra',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OpportunitiesRoute = OpportunitiesRouteImport.update({
   id: '/opportunities',
   path: '/opportunities',
@@ -84,6 +98,11 @@ const PengabdianRoute = PengabdianRouteImport.update({
 const ProfilRoute = ProfilRouteImport.update({
   id: '/profil',
   path: '/profil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramRoute = ProgramRouteImport.update({
+  id: '/program',
+  path: '/program',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PublikasiRoute = PublikasiRouteImport.update({
@@ -106,42 +125,55 @@ const RisetInovasiRoute = RisetInovasiRouteImport.update({
   path: '/riset-inovasi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TentangKamiRoute = TentangKamiRouteImport.update({
+  id: '/tentang-kami',
+  path: '/tentang-kami',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/berita-agenda': typeof BeritaAgendaRoute
   '/dokumen': typeof DokumenRoute
   '/fokus-kajian': typeof FokusKajianRoute
+  '/kegiatan': typeof KegiatanRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
   '/kolaborasi': typeof KolaborasiRoute
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
   '/layanan-kerjasama': typeof LayananKerjasamaRoute
+  '/mitra': typeof MitraRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
+  '/program': typeof ProgramRoute
   '/publikasi': typeof PublikasiRoute
   '/publikasi-dokumen': typeof PublikasiDokumenRoute
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/berita-agenda': typeof BeritaAgendaRoute
   '/dokumen': typeof DokumenRoute
   '/fokus-kajian': typeof FokusKajianRoute
+  '/kegiatan': typeof KegiatanRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
   '/kolaborasi': typeof KolaborasiRoute
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
   '/layanan-kerjasama': typeof LayananKerjasamaRoute
+  '/mitra': typeof MitraRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
+  '/program': typeof ProgramRoute
   '/publikasi': typeof PublikasiRoute
   '/publikasi-dokumen': typeof PublikasiDokumenRoute
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -149,18 +181,22 @@ export interface FileRoutesById {
   '/berita-agenda': typeof BeritaAgendaRoute
   '/dokumen': typeof DokumenRoute
   '/fokus-kajian': typeof FokusKajianRoute
+  '/kegiatan': typeof KegiatanRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
   '/kolaborasi': typeof KolaborasiRoute
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
   '/layanan-kerjasama': typeof LayananKerjasamaRoute
+  '/mitra': typeof MitraRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
   '/profil': typeof ProfilRoute
+  '/program': typeof ProgramRoute
   '/publikasi': typeof PublikasiRoute
   '/publikasi-dokumen': typeof PublikasiDokumenRoute
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -169,54 +205,66 @@ export interface FileRouteTypes {
     | '/berita-agenda'
     | '/dokumen'
     | '/fokus-kajian'
+    | '/kegiatan'
     | '/knowledge-hub'
     | '/kolaborasi'
     | '/kontak'
     | '/layanan'
     | '/layanan-kerjasama'
+    | '/mitra'
     | '/opportunities'
     | '/pengabdian'
     | '/profil'
+    | '/program'
     | '/publikasi'
     | '/publikasi-dokumen'
     | '/researchers'
     | '/riset-inovasi'
+    | '/tentang-kami'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/berita-agenda'
     | '/dokumen'
     | '/fokus-kajian'
+    | '/kegiatan'
     | '/knowledge-hub'
     | '/kolaborasi'
     | '/kontak'
     | '/layanan'
     | '/layanan-kerjasama'
+    | '/mitra'
     | '/opportunities'
     | '/pengabdian'
     | '/profil'
+    | '/program'
     | '/publikasi'
     | '/publikasi-dokumen'
     | '/researchers'
     | '/riset-inovasi'
+    | '/tentang-kami'
   id:
     | '__root__'
     | '/'
     | '/berita-agenda'
     | '/dokumen'
     | '/fokus-kajian'
+    | '/kegiatan'
     | '/knowledge-hub'
     | '/kolaborasi'
     | '/kontak'
     | '/layanan'
     | '/layanan-kerjasama'
+    | '/mitra'
     | '/opportunities'
     | '/pengabdian'
     | '/profil'
+    | '/program'
     | '/publikasi'
     | '/publikasi-dokumen'
     | '/researchers'
     | '/riset-inovasi'
+    | '/tentang-kami'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -224,18 +272,22 @@ export interface RootRouteChildren {
   BeritaAgendaRoute: typeof BeritaAgendaRoute
   DokumenRoute: typeof DokumenRoute
   FokusKajianRoute: typeof FokusKajianRoute
+  KegiatanRoute: typeof KegiatanRoute
   KnowledgeHubRoute: typeof KnowledgeHubRoute
   KolaborasiRoute: typeof KolaborasiRoute
   KontakRoute: typeof KontakRoute
   LayananRoute: typeof LayananRoute
   LayananKerjasamaRoute: typeof LayananKerjasamaRoute
+  MitraRoute: typeof MitraRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
   PengabdianRoute: typeof PengabdianRoute
   ProfilRoute: typeof ProfilRoute
+  ProgramRoute: typeof ProgramRoute
   PublikasiRoute: typeof PublikasiRoute
   PublikasiDokumenRoute: typeof PublikasiDokumenRoute
   ResearchersRoute: typeof ResearchersRoute
   RisetInovasiRoute: typeof RisetInovasiRoute
+  TentangKamiRoute: typeof TentangKamiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -266,6 +318,13 @@ declare module '@tanstack/react-router' {
       path: '/fokus-kajian'
       fullPath: '/fokus-kajian'
       preLoaderRoute: typeof FokusKajianRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kegiatan': {
+      id: '/kegiatan'
+      path: '/kegiatan'
+      fullPath: '/kegiatan'
+      preLoaderRoute: typeof KegiatanRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/knowledge-hub': {
@@ -303,6 +362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayananKerjasamaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mitra': {
+      id: '/mitra'
+      path: '/mitra'
+      fullPath: '/mitra'
+      preLoaderRoute: typeof MitraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/opportunities': {
       id: '/opportunities'
       path: '/opportunities'
@@ -322,6 +388,13 @@ declare module '@tanstack/react-router' {
       path: '/profil'
       fullPath: '/profil'
       preLoaderRoute: typeof ProfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/program': {
+      id: '/program'
+      path: '/program'
+      fullPath: '/program'
+      preLoaderRoute: typeof ProgramRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/publikasi': {
@@ -352,6 +425,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RisetInovasiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tentang-kami': {
+      id: '/tentang-kami'
+      path: '/tentang-kami'
+      fullPath: '/tentang-kami'
+      preLoaderRoute: typeof TentangKamiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -360,18 +440,22 @@ const rootRouteChildren: RootRouteChildren = {
   BeritaAgendaRoute: BeritaAgendaRoute,
   DokumenRoute: DokumenRoute,
   FokusKajianRoute: FokusKajianRoute,
+  KegiatanRoute: KegiatanRoute,
   KnowledgeHubRoute: KnowledgeHubRoute,
   KolaborasiRoute: KolaborasiRoute,
   KontakRoute: KontakRoute,
   LayananRoute: LayananRoute,
   LayananKerjasamaRoute: LayananKerjasamaRoute,
+  MitraRoute: MitraRoute,
   OpportunitiesRoute: OpportunitiesRoute,
   PengabdianRoute: PengabdianRoute,
   ProfilRoute: ProfilRoute,
+  ProgramRoute: ProgramRoute,
   PublikasiRoute: PublikasiRoute,
   PublikasiDokumenRoute: PublikasiDokumenRoute,
   ResearchersRoute: ResearchersRoute,
   RisetInovasiRoute: RisetInovasiRoute,
+  TentangKamiRoute: TentangKamiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -2,21 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SectionPage } from "@/components/SectionPage";
 import { getSection } from "@/lib/site-data";
 
-const section = getSection("publikasi");
+const section = getSection("mitra");
 
-export const Route = createFileRoute("/publikasi")({
+export const Route = createFileRoute("/mitra")({
   head: () => ({
     meta: [
-      { title: "Publikasi — Artikel & Laporan" },
+      { title: "Mitra & Kerja Sama — Pusat Studi Unimus" },
       {
         name: "description",
         content:
-          "Artikel ilmiah, buku, bacaan populer, ringkasan kebijakan, dan laporan Pusat Studi Unimus yang dapat diunduh.",
+          "Layanan kajian, pelatihan dan narasumber, cara mengajukan kerja sama, peluang magang riset mahasiswa, serta informasi hibah.",
       },
-      { property: "og:title", content: "Publikasi — Pusat Studi Unimus" },
+      { property: "og:title", content: "Mitra & Kerja Sama — Pusat Studi Unimus" },
       {
         property: "og:description",
-        content: "Hasil kajian dan dokumen resmi kami, terbuka untuk dibaca siapa pun.",
+        content: "Dukungan riset untuk instansi, dunia usaha, komunitas, dan mahasiswa.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
