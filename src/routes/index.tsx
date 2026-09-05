@@ -25,17 +25,17 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { icon: FlaskConical, title: "Riset & Inovasi", slug: "riset-inovasi", text: "Penelitian dosen dan mahasiswa yang berujung pada solusi yang bisa dipakai." },
-  { icon: HandHeart, title: "Pengabdian", slug: "pengabdian", text: "Pendampingan desa, sekolah, dan usaha kecil bersama warga." },
-  { icon: BookOpen, title: "Publikasi & Dokumen", slug: "publikasi-dokumen", text: "Jurnal, buku, ringkasan kebijakan, dan dokumen yang bisa diunduh." },
-  { icon: Compass, title: "Layanan & Kerja Sama", slug: "layanan-kerjasama", text: "Layanan kajian untuk mitra serta peluang magang riset mahasiswa." },
+  { icon: HandHeart, title: "Program", slug: "program", text: "Pengabdian, pemberdayaan, dan desa binaan, bersama penelitian dosen dan mahasiswa." },
+  { icon: FlaskConical, title: "Kegiatan", slug: "kegiatan", text: "Berita, agenda acara terbuka, dan dokumentasi kegiatan kami." },
+  { icon: BookOpen, title: "Publikasi", slug: "publikasi", text: "Artikel ilmiah, bacaan populer, dan laporan yang bisa diunduh." },
+  { icon: Compass, title: "Mitra", slug: "mitra", text: "Layanan kajian untuk mitra serta peluang magang riset mahasiswa." },
 ];
 
 const audiences = [
-  { who: "Mahasiswa", need: "Magang riset, asisten peneliti, dan bantuan dana penelitian.", slug: "layanan-kerjasama" },
-  { who: "Dosen & Peneliti", need: "Bidang kajian, penelitian berjalan, dan arah riset Pusat Studi.", slug: "riset-inovasi" },
-  { who: "Mitra & Instansi", need: "Layanan kajian, pelatihan, dan cara mengajukan kerja sama.", slug: "layanan-kerjasama" },
-  { who: "Masyarakat Umum", need: "Program pendampingan, agenda terbuka, dan bacaan hasil riset.", slug: "pengabdian" },
+  { who: "Mahasiswa", need: "Magang riset, asisten peneliti, dan bantuan dana penelitian.", slug: "mitra" },
+  { who: "Dosen & Peneliti", need: "Bidang kajian, penelitian berjalan, dan inovasi Pusat Studi.", slug: "program" },
+  { who: "Mitra & Instansi", need: "Layanan kajian, pelatihan, dan cara mengajukan kerja sama.", slug: "mitra" },
+  { who: "Masyarakat Umum", need: "Program pendampingan, agenda terbuka, dan bacaan hasil riset.", slug: "kegiatan" },
 ];
 
 
