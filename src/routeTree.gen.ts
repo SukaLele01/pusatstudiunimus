@@ -29,6 +29,7 @@ import { Route as PublikasiDokumenRouteImport } from './routes/publikasi-dokumen
 import { Route as ResearchersRouteImport } from './routes/researchers'
 import { Route as RisetInovasiRouteImport } from './routes/riset-inovasi'
 import { Route as TentangKamiRouteImport } from './routes/tentang-kami'
+import { Route as ApiPublicMediaSplatRouteImport } from './routes/api/public/media/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -130,6 +131,11 @@ const TentangKamiRoute = TentangKamiRouteImport.update({
   path: '/tentang-kami',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicMediaSplatRoute = ApiPublicMediaSplatRouteImport.update({
+  id: '/api/public/media/$',
+  path: '/api/public/media/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -152,6 +158,7 @@ export interface FileRoutesByFullPath {
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -174,6 +181,7 @@ export interface FileRoutesByTo {
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -197,6 +205,7 @@ export interface FileRoutesById {
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -221,6 +230,7 @@ export interface FileRouteTypes {
     | '/researchers'
     | '/riset-inovasi'
     | '/tentang-kami'
+    | '/api/public/media/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -243,6 +253,7 @@ export interface FileRouteTypes {
     | '/researchers'
     | '/riset-inovasi'
     | '/tentang-kami'
+    | '/api/public/media/$'
   id:
     | '__root__'
     | '/'
@@ -265,6 +276,7 @@ export interface FileRouteTypes {
     | '/researchers'
     | '/riset-inovasi'
     | '/tentang-kami'
+    | '/api/public/media/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -288,6 +300,7 @@ export interface RootRouteChildren {
   ResearchersRoute: typeof ResearchersRoute
   RisetInovasiRoute: typeof RisetInovasiRoute
   TentangKamiRoute: typeof TentangKamiRoute
+  ApiPublicMediaSplatRoute: typeof ApiPublicMediaSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -432,6 +445,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TentangKamiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/media/$': {
+      id: '/api/public/media/$'
+      path: '/api/public/media/$'
+      fullPath: '/api/public/media/$'
+      preLoaderRoute: typeof ApiPublicMediaSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -456,6 +476,7 @@ const rootRouteChildren: RootRouteChildren = {
   ResearchersRoute: ResearchersRoute,
   RisetInovasiRoute: RisetInovasiRoute,
   TentangKamiRoute: TentangKamiRoute,
+  ApiPublicMediaSplatRoute: ApiPublicMediaSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
