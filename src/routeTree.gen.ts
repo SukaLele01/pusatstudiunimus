@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as BeritaAgendaRouteImport } from './routes/berita-agenda'
 import { Route as DokumenRouteImport } from './routes/dokumen'
 import { Route as FokusKajianRouteImport } from './routes/fokus-kajian'
@@ -30,11 +31,16 @@ import { Route as PublikasiDokumenRouteImport } from './routes/publikasi-dokumen
 import { Route as ResearchersRouteImport } from './routes/researchers'
 import { Route as RisetInovasiRouteImport } from './routes/riset-inovasi'
 import { Route as TentangKamiRouteImport } from './routes/tentang-kami'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ApiPublicMediaSplatRouteImport } from './routes/api/public/media/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BeritaAgendaRoute = BeritaAgendaRouteImport.update({
@@ -137,6 +143,11 @@ const TentangKamiRoute = TentangKamiRouteImport.update({
   path: '/tentang-kami',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const ApiPublicMediaSplatRoute = ApiPublicMediaSplatRouteImport.update({
   id: '/api/public/media/$',
   path: '/api/public/media/$',
@@ -165,6 +176,7 @@ export interface FileRoutesByFullPath {
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRoutesByTo {
@@ -189,11 +201,13 @@ export interface FileRoutesByTo {
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/berita-agenda': typeof BeritaAgendaRoute
   '/dokumen': typeof DokumenRoute
   '/fokus-kajian': typeof FokusKajianRoute
@@ -214,6 +228,7 @@ export interface FileRoutesById {
   '/researchers': typeof ResearchersRoute
   '/riset-inovasi': typeof RisetInovasiRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRouteTypes {
@@ -240,6 +255,7 @@ export interface FileRouteTypes {
     | '/researchers'
     | '/riset-inovasi'
     | '/tentang-kami'
+    | '/admin'
     | '/api/public/media/$'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -264,10 +280,12 @@ export interface FileRouteTypes {
     | '/researchers'
     | '/riset-inovasi'
     | '/tentang-kami'
+    | '/admin'
     | '/api/public/media/$'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/berita-agenda'
     | '/dokumen'
     | '/fokus-kajian'
@@ -288,11 +306,13 @@ export interface FileRouteTypes {
     | '/researchers'
     | '/riset-inovasi'
     | '/tentang-kami'
+    | '/_authenticated/admin'
     | '/api/public/media/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   BeritaAgendaRoute: typeof BeritaAgendaRoute
   DokumenRoute: typeof DokumenRoute
   FokusKajianRoute: typeof FokusKajianRoute
@@ -323,6 +343,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/berita-agenda': {
@@ -465,6 +492,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TentangKamiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/api/public/media/$': {
       id: '/api/public/media/$'
       path: '/api/public/media/$'
@@ -475,8 +509,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   BeritaAgendaRoute: BeritaAgendaRoute,
   DokumenRoute: DokumenRoute,
   FokusKajianRoute: FokusKajianRoute,
