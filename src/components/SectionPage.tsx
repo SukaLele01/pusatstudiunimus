@@ -53,6 +53,8 @@ export function SectionPage({ section, children }: { section: Section; children?
         </div>
       </section>
 
+      {children}
+
       <section className="mx-auto max-w-7xl px-4 pb-8 lg:px-8">
         <Reveal>
           <div className="rounded-3xl border border-border bg-secondary/60 p-8 lg:p-12">
