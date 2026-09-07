@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
+import type { ReactNode } from "react";
 import { Reveal } from "@/components/Reveal";
 import { slugify } from "@/components/SiteHeader";
 import { sections, type Section } from "@/lib/site-data";
 
-export function SectionPage({ section }: { section: Section }) {
+export function SectionPage({ section, children }: { section: Section; children?: ReactNode }) {
   const others = sections.filter((s) => s.slug !== section.slug).slice(0, 4);
 
   return (
@@ -51,6 +52,8 @@ export function SectionPage({ section }: { section: Section }) {
           ))}
         </div>
       </section>
+
+      {children}
 
       <section className="mx-auto max-w-7xl px-4 pb-8 lg:px-8">
         <Reveal>
