@@ -19,6 +19,7 @@ import { Route as KolaborasiRouteImport } from './routes/kolaborasi'
 import { Route as KontakRouteImport } from './routes/kontak'
 import { Route as LayananRouteImport } from './routes/layanan'
 import { Route as LayananKerjasamaRouteImport } from './routes/layanan-kerjasama'
+import { Route as MasukRouteImport } from './routes/masuk'
 import { Route as MitraRouteImport } from './routes/mitra'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PengabdianRouteImport } from './routes/pengabdian'
@@ -79,6 +80,11 @@ const LayananRoute = LayananRouteImport.update({
 const LayananKerjasamaRoute = LayananKerjasamaRouteImport.update({
   id: '/layanan-kerjasama',
   path: '/layanan-kerjasama',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MasukRoute = MasukRouteImport.update({
+  id: '/masuk',
+  path: '/masuk',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MitraRoute = MitraRouteImport.update({
@@ -148,6 +154,7 @@ export interface FileRoutesByFullPath {
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
   '/layanan-kerjasama': typeof LayananKerjasamaRoute
+  '/masuk': typeof MasukRoute
   '/mitra': typeof MitraRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
@@ -171,6 +178,7 @@ export interface FileRoutesByTo {
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
   '/layanan-kerjasama': typeof LayananKerjasamaRoute
+  '/masuk': typeof MasukRoute
   '/mitra': typeof MitraRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
@@ -195,6 +203,7 @@ export interface FileRoutesById {
   '/kontak': typeof KontakRoute
   '/layanan': typeof LayananRoute
   '/layanan-kerjasama': typeof LayananKerjasamaRoute
+  '/masuk': typeof MasukRoute
   '/mitra': typeof MitraRoute
   '/opportunities': typeof OpportunitiesRoute
   '/pengabdian': typeof PengabdianRoute
@@ -220,6 +229,7 @@ export interface FileRouteTypes {
     | '/kontak'
     | '/layanan'
     | '/layanan-kerjasama'
+    | '/masuk'
     | '/mitra'
     | '/opportunities'
     | '/pengabdian'
@@ -243,6 +253,7 @@ export interface FileRouteTypes {
     | '/kontak'
     | '/layanan'
     | '/layanan-kerjasama'
+    | '/masuk'
     | '/mitra'
     | '/opportunities'
     | '/pengabdian'
@@ -266,6 +277,7 @@ export interface FileRouteTypes {
     | '/kontak'
     | '/layanan'
     | '/layanan-kerjasama'
+    | '/masuk'
     | '/mitra'
     | '/opportunities'
     | '/pengabdian'
@@ -290,6 +302,7 @@ export interface RootRouteChildren {
   KontakRoute: typeof KontakRoute
   LayananRoute: typeof LayananRoute
   LayananKerjasamaRoute: typeof LayananKerjasamaRoute
+  MasukRoute: typeof MasukRoute
   MitraRoute: typeof MitraRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
   PengabdianRoute: typeof PengabdianRoute
@@ -373,6 +386,13 @@ declare module '@tanstack/react-router' {
       path: '/layanan-kerjasama'
       fullPath: '/layanan-kerjasama'
       preLoaderRoute: typeof LayananKerjasamaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/masuk': {
+      id: '/masuk'
+      path: '/masuk'
+      fullPath: '/masuk'
+      preLoaderRoute: typeof MasukRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mitra': {
@@ -466,6 +486,7 @@ const rootRouteChildren: RootRouteChildren = {
   KontakRoute: KontakRoute,
   LayananRoute: LayananRoute,
   LayananKerjasamaRoute: LayananKerjasamaRoute,
+  MasukRoute: MasukRoute,
   MitraRoute: MitraRoute,
   OpportunitiesRoute: OpportunitiesRoute,
   PengabdianRoute: PengabdianRoute,
